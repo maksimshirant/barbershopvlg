@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-400.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-500.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-600.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SovMod";
+  src: url("/SovMod.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope Local";
+  src: url("/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  --color-bg: #100c0b;
+  --color-surface: #1c1b17;
+  --color-text: #f4f4f5;
+  --color-accent: #8a7356;
+  --color-accent-bright: #8a7356;
+  --color-accent-soft: #8a7356;
+  --font-display: "Baskerville", "Times New Roman", serif;
+  --font-hero: "SovMod", var(--font-display);
+  --font-montserrat: "Montserrat", var(--font-body);
+  --font-body: "Manrope Local", "Manrope", "Inter", system-ui, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--font-body);
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(138, 115, 86, 0.12), transparent 28%),
+    var(--color-bg);
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(138, 115, 86, 0.35);
+  color: #fffaf2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
