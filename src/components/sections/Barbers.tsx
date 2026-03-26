@@ -11,25 +11,25 @@ type Barber = {
 
 const BARBERS: Barber[] = [
   {
-    name: 'Алексей',
+    name: 'Иса',
     role: 'Senior barber',
     experience: '7 лет опыта',
     about: 'Сильнее всего работает с fade и классическими формами.',
   },
   {
-    name: 'Максим',
+    name: 'Олег',
     role: 'Top barber',
     experience: '6 лет опыта',
     about: 'Любит чистую геометрию, бороду и аккуратный силуэт.',
   },
   {
-    name: 'Иван',
+    name: 'Мурад',
     role: 'Barber',
     experience: '4 года опыта',
     about: 'Хорошо чувствует длину и текстуру под повседневную укладку.',
   },
   {
-    name: 'Даниил',
+    name: 'Рузанна',
     role: 'Barber',
     experience: '5 лет опыта',
     about: 'Работает спокойно и точно, особенно в комплексах стрижка + борода.',
@@ -80,11 +80,8 @@ export function Barbers({
   return (
     <section
       id={id}
-      className="relative overflow-hidden bg-[var(--color-bg)] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/фон3.png?v=1')" }}
+      className="relative overflow-hidden bg-transparent py-16 md:py-20"
     >
-      <div className="absolute -inset-px bg-[linear-gradient(180deg,rgba(16,12,11,0.72),rgba(28,27,23,0.58))]" />
-
       <div className="relative z-10">
         <Container>
           <div className="border-b border-white/10 pb-10">
@@ -105,31 +102,37 @@ export function Barbers({
             {BARBERS.map((barber) => (
               <article
                 key={barber.name}
-                className="min-w-full snap-start overflow-hidden border border-white/10 bg-[rgba(16,12,11,0.3)] backdrop-blur-md md:min-w-0"
+                className="group relative min-w-full snap-start overflow-hidden border border-white/10 bg-[rgba(16,12,11,0.18)] backdrop-blur-md md:min-w-0"
               >
-                <div className="relative aspect-[4/5] border-b border-white/10 bg-[linear-gradient(145deg,rgba(28,27,23,0.95),rgba(16,12,11,1))]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(138,115,86,0.24),transparent_34%),radial-gradient(circle_at_72%_74%,rgba(255,255,255,0.08),transparent_26%)]" />
-                </div>
+                <div className="relative aspect-[4/5] bg-[linear-gradient(145deg,rgba(28,27,23,0.76),rgba(16,12,11,0.88))]">
+                  <img
+                    src="/чел.jpg"
+                    alt={barber.name}
+                    className="absolute inset-0 h-full w-full object-cover transition duration-500 lg:group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(138,115,86,0.16),transparent_34%),radial-gradient(circle_at_72%_74%,rgba(255,255,255,0.05),transparent_26%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,10,10,0.1)_0%,rgba(12,10,10,0.18)_28%,rgba(12,10,10,0.82)_72%,rgba(12,10,10,0.96)_100%)]" />
 
-                <div className="p-7 sm:p-8">
-                  <div className="text-[2rem] leading-tight text-white [font-family:var(--font-montserrat)]">
-                    {barber.name}
-                  </div>
-                  <div className="mt-2 text-[11px] font-extralight uppercase tracking-[0.24em] text-[var(--color-accent-soft)] [font-family:var(--font-body)]">
-                    {barber.role} • {barber.experience}
-                  </div>
-                  <p className="mt-4 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-                    {barber.about}
-                  </p>
-                  <div className="mt-6">
-                    <Button
-                      onClick={() => onBook(barber.name)}
-                      variant="outline"
-                      size="xs"
-                      className="flex w-full justify-center xl:w-auto"
-                    >
-                      Записаться к мастеру
-                    </Button>
+                  <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6">
+                    <div className="text-[1.65rem] leading-none text-white [font-family:var(--font-montserrat)] sm:text-[1.9rem]">
+                      {barber.name}
+                    </div>
+                    <div className="mt-2 text-[10px] font-extralight uppercase tracking-[0.2em] text-[var(--color-accent-soft)] [font-family:var(--font-body)] sm:text-[11px]">
+                      {barber.role} • {barber.experience}
+                    </div>
+                    <p className="mt-3 max-w-[18rem] text-[13px] font-extralight leading-5 text-zinc-200 [font-family:var(--font-body)] sm:text-sm sm:leading-6">
+                      {barber.about}
+                    </p>
+                    <div className="mt-4">
+                      <Button
+                        onClick={() => onBook(barber.name)}
+                        variant="outline"
+                        size="xs"
+                        className="flex w-full justify-center border-white/20 bg-black/10 backdrop-blur-sm xl:w-auto"
+                      >
+                        Записаться к мастеру
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </article>

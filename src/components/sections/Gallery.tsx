@@ -1,17 +1,17 @@
 import { Container } from '../ui/Container'
 
 const WORKS = [
-  { title: 'Skin fade', meta: 'Чистый переход и плотный контур', image: '/works/work-1.jpg' },
-  { title: 'Texture crop', meta: 'Форма под естественную укладку', image: '/works/work-2.jpg' },
-  { title: 'Beard design', meta: 'Симметрия и аккуратный силуэт', image: '/works/work-3.jpg' },
-  { title: 'Classic scissor cut', meta: 'Спокойная длина и пластика', image: '/works/work-4.jpg' },
-  { title: 'Buzz + beard', meta: 'Минималистичный уход без лишнего', image: '/works/work-5.jpg' },
-  { title: 'Shop atmosphere', meta: 'Кожа, металл, тёплый свет', image: '/works/work-6.jpg' },
+  { title: 'Skin fade', meta: 'Чистый переход и плотный контур', image: '/стрижка.jpg' },
+  { title: 'Texture crop', meta: 'Форма под естественную укладку', image: '/стрижка.jpg' },
+  { title: 'Beard design', meta: 'Симметрия и аккуратный силуэт', image: '/стрижка.jpg' },
+  { title: 'Classic scissor cut', meta: 'Спокойная длина и пластика', image: '/стрижка.jpg' },
+  { title: 'Buzz + beard', meta: 'Минималистичный уход без лишнего', image: '/стрижка.jpg' },
+  { title: 'Shop atmosphere', meta: 'Кожа, металл, тёплый свет', image: '/стрижка.jpg' },
 ]
 
 export function Gallery({ id }: { id: string }) {
   return (
-    <section id={id} className="border-t border-white/10 bg-[var(--color-bg)] py-16 md:py-20">
+    <section id={id} className="border-t border-white/10 bg-transparent py-16 md:py-20">
       <Container>
         <div className="border-b border-white/10 pb-10">
           <div className="text-4xl leading-none tracking-[0.06em] text-[var(--color-accent-soft)] [font-family:var(--font-hero)] sm:text-5xl">

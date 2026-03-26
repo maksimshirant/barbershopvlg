@@ -49,17 +49,6 @@ export function Services({
 }) {
   return (
     <section id={id} className="relative overflow-hidden py-16 md:py-20">
-      <div className="absolute -inset-px">
-        <img
-          src="/фон2.jpg"
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,12,11,0.88)_0%,rgba(16,12,11,0.74)_28%,rgba(16,12,11,0.82)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_16%_10%,rgba(138,115,86,0.16),transparent_38%)]" />
-      </div>
-
       <Container>
         <div className="relative">
           <div className="border-b border-white/10 pb-10">

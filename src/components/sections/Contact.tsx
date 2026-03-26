@@ -4,8 +4,7 @@ export function Contact({ id }: { id: string }) {
   return (
     <section
       id={id}
-      className="relative overflow-hidden bg-[var(--color-bg)] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/контакты.jpg')" }}
+      className="relative overflow-hidden bg-transparent py-16 md:py-20"
     >
       <div className="absolute -inset-px bg-[linear-gradient(180deg,rgba(16,12,11,0.74),rgba(28,27,23,0.68))]" />
 
@@ -36,10 +35,10 @@ export function Contact({ id }: { id: string }) {
                   Телефон
                 </div>
                 <a
-                  href="tel:+79000000000"
+                  href="tel:+79964899008"
                   className="mt-3 block text-3xl leading-tight text-white transition lg:hover:text-[var(--color-accent-soft)] [font-family:var(--font-montserrat)]"
                 >
-                  +7 (900) 000-00-00
+                  +7 (996) 489-90-08
                 </a>
               </div>
 
@@ -48,7 +47,7 @@ export function Contact({ id }: { id: string }) {
                   График
                 </div>
                 <div className="mt-3 text-3xl leading-tight text-white [font-family:var(--font-montserrat)]">
-                  Ежедневно 10:00-21:00
+                  10:00–21:00
                 </div>
               </div>
             </div>
@@ -56,8 +55,8 @@ export function Contact({ id }: { id: string }) {
             <div className="overflow-hidden border border-white/10 bg-[rgba(16,12,11,0.25)]">
               <div className="relative aspect-[16/12]">
                 <iframe
-                  title="Яндекс Карта Волгоград"
-                  src="https://yandex.ru/map-widget/v1/?ll=44.501842%2C48.707067&mode=search&text=%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D1%80%D0%B0%D0%B4%2C%20%D0%90%D0%BB%D0%BB%D0%B5%D1%8F%20%D0%93%D0%B5%D1%80%D0%BE%D0%B5%D0%B2&z=15"
+                  title="Яндекс Карта Dragon Barbershop"
+                  src="https://yandex.ru/map-widget/v1/?ll=44.509914%2C48.746256&pt=44.509914%2C48.746256%2Cpm2rdm&z=16"
                   className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"
                 />

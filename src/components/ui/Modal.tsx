@@ -1,11 +1,18 @@
 import { useEffect, useEffectEvent, type ReactNode } from 'react'
 
+function cx(...parts: Array<string | false | null | undefined>) {
+  return parts.filter(Boolean).join(' ')
+}
+
 export function Modal({
   open,
   eyebrow = 'Запись',
   title,
   description,
   children,
+  panelClassName,
+  contentClassName,
+  contentScrollable = true,
   onClose,
 }: {
   open: boolean
@@ -13,6 +20,9 @@ export function Modal({
   title: string
   description?: string
   children: ReactNode
+  panelClassName?: string
+  contentClassName?: string
+  contentScrollable?: boolean
   onClose: () => void
 }) {
   const handleClose = useEffectEvent(() => {
@@ -53,8 +63,13 @@ export function Modal({
         className="absolute inset-0 bg-[rgba(16,12,11,0.68)] backdrop-blur-xl"
         aria-label="Закрыть"
       />
-      <div className="relative mx-auto flex min-h-full w-full max-w-2xl items-end px-3 py-3 sm:items-center sm:px-6 sm:py-10">
-        <div className="flex max-h-[calc(100vh-1.5rem)] w-full flex-col overflow-hidden rounded-none border border-white/10 bg-[linear-gradient(180deg,rgba(28,27,23,0.96)_0%,rgba(16,12,11,0.98)_100%)] shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:max-h-[calc(100vh-5rem)]">
+      <div className="relative mx-auto flex min-h-full w-full items-end px-3 py-3 sm:items-center sm:px-6 sm:py-10">
+        <div
+          className={cx(
+            'mx-auto flex max-h-[calc(100vh-1.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-none border border-white/10 bg-[linear-gradient(180deg,rgba(28,27,23,0.96)_0%,rgba(16,12,11,0.98)_100%)] shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:max-h-[calc(100vh-5rem)]',
+            panelClassName,
+          )}
+        >
           <div className="border-b border-white/10 px-6 py-5 sm:px-7">
             <div className="flex items-start justify-between gap-6">
               <div>
@@ -88,7 +103,15 @@ export function Modal({
               </button>
             </div>
           </div>
-          <div className="overflow-y-auto px-6 py-6 sm:px-7 sm:py-7">{children}</div>
+          <div
+            className={cx(
+              contentScrollable && 'overflow-y-auto',
+              'px-6 py-6 sm:px-7 sm:py-7',
+              contentClassName,
+            )}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>

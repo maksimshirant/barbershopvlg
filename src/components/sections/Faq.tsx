@@ -28,7 +28,7 @@ export function Faq() {
   const [active, setActive] = useState<number | null>(null)
 
   return (
-    <section className="border-t border-white/10 bg-[var(--color-bg)] py-16 md:py-20">
+    <section className="border-t border-white/10 bg-transparent py-16 md:py-20">
       <Container>
         <div className="border-b border-white/10 pb-10">
           <div className="text-4xl leading-none tracking-[0.06em] text-[var(--color-accent-soft)] [font-family:var(--font-hero)] sm:text-5xl">

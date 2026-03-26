@@ -61,22 +61,19 @@ export function Header({
         className={cx(
           'sticky top-0 z-50 border-b transition',
           scrolled
-            ? 'border-white/10 bg-[rgba(8,8,9,0.92)] backdrop-blur-xl'
+            ? 'border-white/10 bg-[rgba(8,8,9,0.98)] backdrop-blur-xl'
             : 'border-transparent bg-transparent',
           'relative',
         )}
       >
         <Container>
           <div className="flex min-h-16 items-center justify-between gap-4 py-3 lg:min-h-[74px]">
-            <a href="#top" className="group inline-flex items-center">
-              <div className="leading-tight">
-                <div className="text-base tracking-[0.06em] text-white transition lg:group-hover:text-[var(--color-accent-soft)] [font-family:var(--font-body)] sm:text-lg">
-                  Barbershop VLG
-                </div>
-                <div className="text-[9px] font-extralight uppercase tracking-[0.24em] text-zinc-500 transition [font-family:var(--font-body)] lg:group-hover:text-zinc-300 sm:text-[10px] sm:tracking-[0.28em]">
-                  или что угодно
-                </div>
-              </div>
+            <a href="#top" className="group inline-flex items-center" aria-label="Barbershop VLG">
+              <img
+                src="/Logo.png"
+                alt="Barbershop VLG"
+                className="h-8 w-auto origin-left scale-[1.2] object-contain transition duration-300 lg:group-hover:scale-[1.2] lg:group-hover:opacity-85 sm:h-9 lg:h-10"
+              />
             </a>
 
             <nav className="hidden items-center gap-7 lg:flex">
@@ -94,12 +91,12 @@ export function Header({
 
             <div className="hidden items-center gap-6 lg:flex">
               <a
-                href="tel:+79000000000"
+                href="tel:+79964899008"
                 aria-label="Позвонить в Barbershop VLG"
                 title="Позвонить"
                 className="group relative py-2 text-[11px] font-extralight uppercase tracking-[0.2em] text-zinc-300 transition duration-200 [font-family:var(--font-body)] lg:hover:text-[var(--color-accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
               >
-                <span>+7 (900) 000-00-00</span>
+                <span>+7 (996) 489-90-08</span>
                 <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-[var(--color-accent)] transition-transform duration-300 lg:group-hover:scale-x-100" />
               </a>
               <Button
@@ -108,13 +105,13 @@ export function Header({
                 size="xs"
                 className="border-[#8A7356] bg-[#8A7356] text-[#100C0B]/75 shadow-[0_16px_40px_rgba(138,115,86,0.16)] lg:hover:border-[#8A7356] lg:hover:bg-[#8A7356] lg:hover:text-[#100C0B]/75 [font-family:var(--font-body)]"
               >
-                Заказать звонок
+                Онлайн запись
               </Button>
             </div>
 
             <div className="flex items-center gap-2 lg:hidden">
               <a
-                href="tel:+79000000000"
+                href="tel:+79964899008"
                 aria-label="Позвонить в Barbershop VLG"
                 title="Позвонить"
                 className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(16,12,11,0.25)] text-zinc-100"
@@ -185,7 +182,7 @@ export function Header({
                 <div className="mt-5 grid gap-4 border-t border-white/10 pt-5">
                   <div className="grid gap-1 text-sm leading-6 text-zinc-400">
                     <div>Волгоград, центр города</div>
-                    <div>Ежедневно 10:00-21:00</div>
+                    <div>10:00–21:00</div>
                   </div>
                   <Button
                     onClick={() => {

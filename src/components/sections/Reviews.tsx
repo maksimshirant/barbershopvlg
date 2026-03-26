@@ -3,24 +3,32 @@ import { Container } from '../ui/Container'
 
 const REVIEWS = [
   {
-    name: 'Илья',
-    role: 'постоянный гость',
-    quote: 'Сказал, как обычно укладываю волосы, и форму сразу попали точно. Без лишних слов и без сюрпризов.',
+    name: 'Никита Зорин',
+    details: '2 отзыва',
+    date: '16 сентября 2025',
+    quote:
+      'Прекрасное уютное место, где вас хорошо обслужат. Особенное спасибо мастеру Олегу, который ответственно подошел к работе. Я остался доволен причёской всем советую туда приходить постригаться .',
   },
   {
-    name: 'Роман',
-    role: 'новый клиент',
-    quote: 'Первый визит прошёл спокойно: удобная запись, чёткое время, понятный прайс и чистый fade без доработок дома.',
+    name: 'Наталья Пенькова',
+    details: '1 отзыв',
+    date: '18 января 2026',
+    quote:
+      'Очень понравилось, делали стрижку сыну, первый барбершоп, после которого он доволен. Приятная обстановка, отдельное спасибо мастеру Исаму!',
   },
   {
-    name: 'Артём',
-    role: 'гость с бородой',
-    quote: 'Здесь не просто подровняли бороду, а собрали весь образ. Понравилось внимание к деталям и аккуратность.',
+    name: 'Городской житель',
+    details: '1 отзыв',
+    date: '29 июня 2025',
+    quote:
+      'Сегодня не ожинанно для себя, открыл это замечательное место , пришёл просто подстричь бороду , а эти красавцы побрили и не смог себе отказать в стрижке, всё на высшем уровне , Спасибо большое!\nУдачи и побольше клиентов!!!',
   },
   {
-    name: 'Максим',
-    role: 'ходит раз в 3 недели',
-    quote: 'Нравится предсказуемый результат. Приходишь в своё время, уходишь с нужной формой, без ожидания и шума.',
+    name: 'Богдан Путилин',
+    details: '1 отзыв',
+    date: '23 марта 2025',
+    quote:
+      'Приветствую✌🏻\nОчень хороший барбершоп, сегодня побывал в нем и остался очень доволен, барьеры профессионалы своего ремесла, хочу отметить Мурада и Рузанну, они знают свое дело, отзывчие добрые люди, буду советовать своим близким и друзьям\nУдачи!',
   },
 ]
 
@@ -34,8 +42,7 @@ export function Reviews({
   return (
     <section
       id={id}
-      className="relative overflow-hidden bg-[var(--color-bg)] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/фон2.jpg')" }}
+      className="relative overflow-hidden bg-transparent py-16 md:py-20"
     >
       <div className="absolute -inset-px bg-[linear-gradient(180deg,rgba(16,12,11,0.76),rgba(28,27,23,0.66))]" />
 
@@ -60,10 +67,10 @@ export function Reviews({
           <div className="mt-10 grid gap-6 lg:grid-cols-[280px_1fr]">
             <div className="border border-white/10 bg-[rgba(16,12,11,0.3)] p-6 backdrop-blur-md">
               <div className="text-6xl leading-none text-white [font-family:var(--font-montserrat)]">
-                4.9
+                5/5
               </div>
               <div className="mt-3 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-                Средняя оценка гостей. Возвращаются за стабильным результатом, спокойной атмосферой и удобной записью.
+                Средняя оценка гостей: 5 из 5. Возвращаются за стабильным результатом, спокойной атмосферой и удобной записью.
               </div>
               <div className="mt-8 grid gap-4 border-t border-white/10 pt-6 text-sm font-extralight text-zinc-300 [font-family:var(--font-body)]">
                 <div>218+ отзывов на локальных площадках</div>
@@ -81,14 +88,19 @@ export function Reviews({
                         {review.name}
                       </div>
                       <div className="mt-1 text-[11px] font-extralight uppercase tracking-[0.24em] text-zinc-500 [font-family:var(--font-body)]">
-                        {review.role}
+                        {review.details}
                       </div>
                     </div>
-                    <div className="text-sm font-extralight text-[var(--color-accent)] [font-family:var(--font-body)]">
-                      ★★★★★
+                    <div className="text-right">
+                      <div className="text-sm font-extralight text-[var(--color-accent)] [font-family:var(--font-body)]">
+                        ★★★★★
+                      </div>
+                      <div className="mt-1 text-[11px] font-extralight uppercase tracking-[0.2em] text-zinc-500 [font-family:var(--font-body)]">
+                        {review.date}
+                      </div>
                     </div>
                   </div>
-                  <p className="mt-5 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
+                  <p className="mt-5 whitespace-pre-line text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
                     “{review.quote}”
                   </p>
                 </article>

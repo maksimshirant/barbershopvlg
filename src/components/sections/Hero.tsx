@@ -2,9 +2,9 @@ import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 
 const HERO_FACTS = [
-  { value: '4.9', label: 'рейтинг гостей' },
+  { value: '5/5', label: 'рейтинг гостей' },
   { value: '7/7', label: 'работаем ежедневно' },
-  { value: '5 мин', label: 'от центра города' },
+  { value: '10 мин', label: 'от центра города' },
 ]
 
 export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
@@ -12,7 +12,7 @@ export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
     <section id="top" className="relative overflow-hidden border-b border-white/10">
       <div className="absolute -inset-px">
         <img
-          src="/фон.jpg"
+          src="/фон.png"
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover object-center"
@@ -55,7 +55,7 @@ export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
             </div>
           </div>
 
-          <div className="hidden lg:flex lg:justify-end lg:pl-12 xl:pl-20">
+          <div className="hidden lg:flex lg:justify-end lg:pl-20 xl:pl-32">
             <HeroFacts className="w-full max-w-[430px] self-start border border-white/10 bg-[rgba(16,12,11,0.3)] p-8 backdrop-blur-md lg:-translate-y-14 xl:-translate-y-20" />
           </div>
         </div>

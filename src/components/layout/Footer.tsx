@@ -11,13 +11,17 @@ export function Footer({
   onOpenPrivacy: () => void
 }) {
   return (
-    <footer className="border-t border-white/10 bg-[var(--color-bg)] pb-24 md:pb-0">
+    <footer className="border-t border-white/10 bg-transparent pb-24 md:pb-0">
       <Container>
         <div className="grid gap-10 py-12 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_0.9fr]">
           <div>
-            <div className="text-lg tracking-[0.06em] text-white [font-family:var(--font-hero)]">
-              Barbershop VLG
-            </div>
+            <a href="#top" className="inline-flex items-center" aria-label="Barbershop VLG">
+              <img
+                src="/Logo.png"
+                alt="Barbershop VLG"
+                className="h-14 w-auto object-contain"
+              />
+            </a>
             <div className="mt-3 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
               Тут что нибудь крутое напишите
             </div>
@@ -52,8 +56,8 @@ export function Footer({
               >
                 Записаться онлайн
               </button>
-              <a className="transition lg:hover:text-[var(--color-accent-soft)]" href="tel:+79000000000">
-                +7 (900) 000-00-00
+              <a className="transition lg:hover:text-[var(--color-accent-soft)]" href="tel:+79964899008">
+                +7 (996) 489-90-08
               </a>
               <a className="transition lg:hover:text-[var(--color-accent-soft)]" href="mailto:example@example.ru">
                 example@example.ru
