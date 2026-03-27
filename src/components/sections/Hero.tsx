@@ -12,7 +12,7 @@ export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
     <section id="top" className="relative overflow-hidden border-b border-white/10">
       <div className="absolute -inset-px">
         <img
-          src="/фон.png"
+          src="/запасной фон.jpg"
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover object-center"

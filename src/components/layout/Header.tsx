@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { BRAND, CONTACT_INFO, SHOW_BRAND_LOGO } from '../../content/siteConfig'
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
+import { BrandMark } from './BrandMark'
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(' ')
@@ -68,11 +70,14 @@ export function Header({
       >
         <Container>
           <div className="flex min-h-16 items-center justify-between gap-4 py-3 lg:min-h-[74px]">
-            <a href="#top" className="group inline-flex items-center" aria-label="Barbershop VLG">
-              <img
-                src="/Logo.png"
-                alt="Barbershop VLG"
-                className="h-8 w-auto origin-left scale-[1.2] object-contain transition duration-300 lg:group-hover:scale-[1.2] lg:group-hover:opacity-85 sm:h-9 lg:h-10"
+            <a
+              href="#top"
+              className="group inline-flex items-center"
+              aria-label={SHOW_BRAND_LOGO ? BRAND.name : BRAND.logoPlaceholder}
+            >
+              <BrandMark
+                imageClassName="h-8 w-auto origin-left scale-[1.2] object-contain transition duration-300 lg:group-hover:scale-[1.2] lg:group-hover:opacity-85 sm:h-9 lg:h-10"
+                placeholderClassName="inline-flex h-10 min-w-[126px] items-center justify-center border border-[var(--color-accent)]/45 px-4 text-[11px] font-light uppercase tracking-[0.34em] text-[var(--color-accent-soft)] transition duration-300 lg:group-hover:border-[var(--color-accent)]/70 lg:group-hover:text-white sm:h-11 lg:h-12"
               />
             </a>
 
@@ -91,12 +96,12 @@ export function Header({
 
             <div className="hidden items-center gap-6 lg:flex">
               <a
-                href="tel:+79964899008"
-                aria-label="Позвонить в Barbershop VLG"
+                href={CONTACT_INFO.phoneHref}
+                aria-label={`Позвонить: ${CONTACT_INFO.phoneDisplay}`}
                 title="Позвонить"
                 className="group relative py-2 text-[11px] font-extralight uppercase tracking-[0.2em] text-zinc-300 transition duration-200 [font-family:var(--font-body)] lg:hover:text-[var(--color-accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
               >
-                <span>+7 (996) 489-90-08</span>
+                <span>{CONTACT_INFO.phoneDisplay}</span>
                 <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-[var(--color-accent)] transition-transform duration-300 lg:group-hover:scale-x-100" />
               </a>
               <Button
@@ -111,8 +116,8 @@ export function Header({
 
             <div className="flex items-center gap-2 lg:hidden">
               <a
-                href="tel:+79964899008"
-                aria-label="Позвонить в Barbershop VLG"
+                href={CONTACT_INFO.phoneHref}
+                aria-label={`Позвонить: ${CONTACT_INFO.phoneDisplay}`}
                 title="Позвонить"
                 className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(16,12,11,0.25)] text-zinc-100"
               >
@@ -181,8 +186,8 @@ export function Header({
                 </nav>
                 <div className="mt-5 grid gap-4 border-t border-white/10 pt-5">
                   <div className="grid gap-1 text-sm leading-6 text-zinc-400">
-                    <div>Волгоград, центр города</div>
-                    <div>10:00–21:00</div>
+                    <div>{CONTACT_INFO.shortLocation}</div>
+                    <div>{CONTACT_INFO.hours}</div>
                   </div>
                   <Button
                     onClick={() => {

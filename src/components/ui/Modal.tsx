@@ -13,6 +13,7 @@ export function Modal({
   panelClassName,
   contentClassName,
   contentScrollable = true,
+  headerHidden = false,
   onClose,
 }: {
   open: boolean
@@ -23,6 +24,7 @@ export function Modal({
   panelClassName?: string
   contentClassName?: string
   contentScrollable?: boolean
+  headerHidden?: boolean
   onClose: () => void
 }) {
   const handleClose = useEffectEvent(() => {
@@ -66,43 +68,67 @@ export function Modal({
       <div className="relative mx-auto flex min-h-full w-full items-end px-3 py-3 sm:items-center sm:px-6 sm:py-10">
         <div
           className={cx(
-            'mx-auto flex max-h-[calc(100vh-1.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-none border border-white/10 bg-[linear-gradient(180deg,rgba(28,27,23,0.96)_0%,rgba(16,12,11,0.98)_100%)] shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:max-h-[calc(100vh-5rem)]',
+            'relative mx-auto flex max-h-[calc(100vh-1.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-none border border-white/10 bg-[linear-gradient(180deg,rgba(28,27,23,0.96)_0%,rgba(16,12,11,0.98)_100%)] shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:max-h-[calc(100vh-5rem)]',
             panelClassName,
           )}
         >
-          <div className="border-b border-white/10 px-6 py-5 sm:px-7">
-            <div className="flex items-start justify-between gap-6">
-              <div>
-                <div className="text-4xl leading-none tracking-[0.06em] text-[var(--color-accent-soft)] [font-family:var(--font-hero)] sm:text-5xl">
-                  {eyebrow}
-                </div>
-                <div className="mt-4 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-                  {title}
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={onClose}
-                className="inline-flex h-16 w-16 items-center justify-center text-zinc-300 transition lg:hover:text-[var(--color-accent-soft)]"
-                aria-label="Закрыть окно"
+          {headerHidden ? (
+            <button
+              type="button"
+              onClick={onClose}
+              className="absolute right-2 top-2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(16,12,11,0.68)] text-zinc-300 backdrop-blur-md transition lg:hover:text-[var(--color-accent-soft)]"
+              aria-label="Закрыть окно"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-7"
+                aria-hidden="true"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-9 w-9"
-                  aria-hidden="true"
+                <path
+                  d="M6 6L18 18M18 6L6 18"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+          ) : (
+            <div className="border-b border-white/10 px-6 py-5 sm:px-7">
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <div className="text-4xl leading-none tracking-[0.06em] text-[var(--color-accent-soft)] [font-family:var(--font-hero)] sm:text-5xl">
+                    {eyebrow}
+                  </div>
+                  <div className="mt-4 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
+                    {title}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="inline-flex h-16 w-16 items-center justify-center text-zinc-300 transition lg:hover:text-[var(--color-accent-soft)]"
+                  aria-label="Закрыть окно"
                 >
-                  <path
-                    d="M6 6L18 18M18 6L6 18"
-                    stroke="currentColor"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 6L18 18M18 6L6 18"
+                      stroke="currentColor"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
+          )}
           <div
             className={cx(
               contentScrollable && 'overflow-y-auto',

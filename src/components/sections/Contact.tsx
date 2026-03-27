@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '../../content/siteConfig'
 import { Container } from '../ui/Container'
 
 export function Contact({ id }: { id: string }) {
@@ -15,7 +16,7 @@ export function Contact({ id }: { id: string }) {
               Контакты
             </div>
             <h2 className="mt-4 max-w-2xl text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-              Адрес, график и карта в одном спокойном блоке
+              Записаться и найти нас легко.
             </h2>
           </div>
 
@@ -26,7 +27,7 @@ export function Contact({ id }: { id: string }) {
                   Адрес
                 </div>
                 <div className="mt-3 text-3xl leading-tight text-white [font-family:var(--font-montserrat)]">
-                  Волгоград, Аллея Героев
+                  {CONTACT_INFO.address}
                 </div>
               </div>
 
@@ -35,10 +36,10 @@ export function Contact({ id }: { id: string }) {
                   Телефон
                 </div>
                 <a
-                  href="tel:+79964899008"
+                  href={CONTACT_INFO.phoneHref}
                   className="mt-3 block text-3xl leading-tight text-white transition lg:hover:text-[var(--color-accent-soft)] [font-family:var(--font-montserrat)]"
                 >
-                  +7 (996) 489-90-08
+                  {CONTACT_INFO.phoneDisplay}
                 </a>
               </div>
 
@@ -47,7 +48,7 @@ export function Contact({ id }: { id: string }) {
                   График
                 </div>
                 <div className="mt-3 text-3xl leading-tight text-white [font-family:var(--font-montserrat)]">
-                  10:00–21:00
+                  {CONTACT_INFO.hours}
                 </div>
               </div>
             </div>
@@ -55,8 +56,8 @@ export function Contact({ id }: { id: string }) {
             <div className="overflow-hidden border border-white/10 bg-[rgba(16,12,11,0.25)]">
               <div className="relative aspect-[16/12]">
                 <iframe
-                  title="Яндекс Карта Dragon Barbershop"
-                  src="https://yandex.ru/map-widget/v1/?ll=44.509914%2C48.746256&pt=44.509914%2C48.746256%2Cpm2rdm&z=16"
+                  title="Карта"
+                  src="https://yandex.ru/map-widget/v1/?ll=30.346483%2C59.938631&pt=30.346483%2C59.938631%2Cpm2rdm&z=16"
                   className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"
                 />

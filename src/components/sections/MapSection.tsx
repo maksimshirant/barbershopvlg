@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '../../content/siteConfig'
 import { Container } from '../ui/Container'
 
 export function MapSection() {
@@ -13,8 +14,8 @@ export function MapSection() {
               Как нас найти
             </div>
             <div className="mt-5 text-sm leading-7 text-zinc-300">
-              Здесь будет интерактивная карта (Яндекс/Google) после подтверждения адреса. Пока —
-              стилизованный плейсхолдер в тонкой рамке.
+              До утверждения финальной точки здесь остаётся нейтральный плейсхолдер вместо
+              реальной карты.
             </div>
 
             <div className="mt-8 grid gap-4">
@@ -22,13 +23,13 @@ export function MapSection() {
                 <div className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-400">
                   Метро / остановка
                 </div>
-                <div className="mt-2 text-sm text-zinc-200">Остановка “Центр” (пример)</div>
+                <div className="mt-2 text-sm text-zinc-200">Остановка “Литейный проспект”</div>
               </div>
               <div className="border border-zinc-800 bg-[rgba(16,12,11,0.2)] px-5 py-4">
                 <div className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-400">
                   Парковка
                 </div>
-                <div className="mt-2 text-sm text-zinc-200">Есть рядом со входом</div>
+                <div className="mt-2 text-sm text-zinc-200">Городская парковка на соседней линии</div>
               </div>
             </div>
           </div>
@@ -40,7 +41,7 @@ export function MapSection() {
               <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-accent-soft)]">
                 Адрес
               </div>
-              <div className="mt-2 text-sm text-zinc-200">Волгоград, ул. Примерная, 10</div>
+              <div className="mt-2 text-sm text-zinc-200">{CONTACT_INFO.address}</div>
             </div>
           </div>
         </div>
