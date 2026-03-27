@@ -1,12 +1,15 @@
 import { Container } from '../ui/Container'
+import { assetUrl } from '../../lib/assetUrl'
+
+const galleryImage = assetUrl('стрижка.jpg')
 
 const WORKS = [
-  { title: 'Skin fade', meta: 'Чистый переход и плотный контур', image: '/стрижка.jpg' },
-  { title: 'Texture crop', meta: 'Форма под естественную укладку', image: '/стрижка.jpg' },
-  { title: 'Beard design', meta: 'Симметрия и аккуратный силуэт', image: '/стрижка.jpg' },
-  { title: 'Classic scissor cut', meta: 'Спокойная длина и пластика', image: '/стрижка.jpg' },
-  { title: 'Buzz + beard', meta: 'Минималистичный уход без лишнего', image: '/стрижка.jpg' },
-  { title: 'Shop atmosphere', meta: 'Кожа, металл, тёплый свет', image: '/стрижка.jpg' },
+  { title: 'Skin fade', meta: 'Чистый переход и плотный контур', image: galleryImage },
+  { title: 'Texture crop', meta: 'Форма под естественную укладку', image: galleryImage },
+  { title: 'Beard design', meta: 'Симметрия и аккуратный силуэт', image: galleryImage },
+  { title: 'Classic scissor cut', meta: 'Спокойная длина и пластика', image: galleryImage },
+  { title: 'Buzz + beard', meta: 'Минималистичный уход без лишнего', image: galleryImage },
+  { title: 'Shop atmosphere', meta: 'Кожа, металл, тёплый свет', image: galleryImage },
 ]
 
 export function Gallery({ id }: { id: string }) {

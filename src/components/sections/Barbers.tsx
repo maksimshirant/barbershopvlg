@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
+import { assetUrl } from '../../lib/assetUrl'
 
 type Barber = {
   name: string
@@ -44,6 +45,7 @@ export function Barbers({
   onBook: (barber: string) => void
 }) {
   const sliderRef = useRef<HTMLDivElement | null>(null)
+  const barberImage = assetUrl('чел.jpg')
 
   const scrollCards = (direction: 'prev' | 'next') => {
     const slider = sliderRef.current
@@ -106,7 +108,7 @@ export function Barbers({
               >
                 <div className="relative aspect-[4/5] bg-[linear-gradient(145deg,rgba(28,27,23,0.76),rgba(16,12,11,0.88))]">
                   <img
-                    src="/чел.jpg"
+                    src={barberImage}
                     alt={barber.name}
                     className="absolute inset-0 h-full w-full object-cover transition duration-500 lg:group-hover:scale-[1.03]"
                   />

@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
+import { assetUrl } from '../../lib/assetUrl'
 
 const HERO_FACTS = [
   { value: '5/5', label: 'рейтинг гостей' },
@@ -8,11 +9,13 @@ const HERO_FACTS = [
 ]
 
 export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
+  const heroBackground = assetUrl('запасной фон.jpg')
+
   return (
     <section id="top" className="relative overflow-hidden border-b border-white/10">
       <div className="absolute -inset-px">
         <img
-          src="/запасной фон.jpg"
+          src={heroBackground}
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover object-center"

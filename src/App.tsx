@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { Hero } from './components/sections/Hero'
@@ -13,6 +13,7 @@ import { Contact } from './components/sections/Contact'
 import { BookingModal } from './components/booking/BookingModal'
 import { PrivacyPolicyModal } from './components/legal/PrivacyPolicyModal'
 import type { BookingModalPreset } from './components/booking/types'
+import { assetUrl } from './lib/assetUrl'
 
 const NAV = [
   { href: '#services', label: 'Услуги' },
@@ -28,6 +29,10 @@ export default function App() {
   const [preset, setPreset] = useState<BookingModalPreset | null>(null)
   const [servicesBackdropOpacity, setServicesBackdropOpacity] = useState(0)
   const servicesStageRef = useRef<HTMLDivElement | null>(null)
+  const servicesBackdropStyle = {
+    opacity: servicesBackdropOpacity,
+    '--services-backdrop-image': `url("${assetUrl('фон2.png')}")`,
+  } as CSSProperties
 
   const onOpenBooking = (nextPreset?: BookingModalPreset) => {
     setPreset(nextPreset ?? null)
@@ -68,7 +73,7 @@ export default function App() {
       <div
         aria-hidden="true"
         className="services-scroll-backdrop"
-        style={{ opacity: servicesBackdropOpacity }}
+        style={servicesBackdropStyle}
       />
       <Header nav={NAV} onOpenBooking={() => onOpenBooking()} />
       <main className="relative z-10">

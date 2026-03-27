@@ -1,8 +1,10 @@
+import { assetUrl } from '../lib/assetUrl'
+
 export const SHOW_BRAND_LOGO = false
 
 export const BRAND = {
   name: 'Ваш бренд',
-  logoSrc: '/Logo.png',
+  logoSrc: assetUrl('Logo.png'),
   logoPlaceholder: 'ВАШ ЛОГО',
   tagline: 'Временная заглушка для бренда. Финальный логотип и фирменный блок можно вернуть в один шаг.',
 } as const

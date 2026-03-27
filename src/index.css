@@ -79,7 +79,7 @@ body {
   background-image:
     linear-gradient(180deg, rgba(16, 12, 11, 0.88) 0%, rgba(16, 12, 11, 0.72) 28%, rgba(16, 12, 11, 0.84) 100%),
     radial-gradient(900px circle at 16% 10%, rgba(138, 115, 86, 0.16), transparent 38%),
-    url("/фон2.png");
+    var(--services-backdrop-image);
   background-position: center top, center top, center top;
   background-repeat: no-repeat;
   background-size: auto, auto, cover;
