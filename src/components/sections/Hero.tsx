@@ -9,7 +9,7 @@ const HERO_FACTS = [
 ]
 
 export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
-  const heroBackground = assetUrl('запасной фон.jpg')
+  const heroBackground = assetUrl('hero-backup.jpg')
 
   return (
     <section id="top" className="relative overflow-hidden border-b border-white/10">
