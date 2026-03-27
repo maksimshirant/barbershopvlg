@@ -1,4 +1,4 @@
-import { useEffect, useEffectEvent } from 'react'
+import { useEffect, useEffectEvent, useState } from 'react'
 import type { BookingModalPreset } from './types'
 
 const YCLIENTS_IFRAME_SRC = 'https://wXXXXXX.yclients.com/'
@@ -12,6 +12,7 @@ export function BookingModal({
   preset: BookingModalPreset | null
   onClose: () => void
 }) {
+  const [vpnToastVisible, setVpnToastVisible] = useState(true)
   const bookingTitle = preset?.service
     ? `Онлайн запись на услугу «${preset.service}».`
     : preset?.barber
@@ -24,6 +25,8 @@ export function BookingModal({
 
   useEffect(() => {
     if (!open) return
+
+    setVpnToastVisible(true)
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -87,6 +90,23 @@ export function BookingModal({
           />
         </svg>
       </button>
+
+      {vpnToastVisible ? (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-3 pb-3 sm:px-5 sm:pb-5">
+          <div className="pointer-events-auto flex w-full max-w-xl items-center gap-3 rounded-2xl border border-white/10 bg-[rgba(16,12,11,0.82)] px-4 py-3 text-xs font-extralight leading-5 text-zinc-100 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-md sm:text-sm">
+            <div className="flex-1 [font-family:var(--font-body)]">
+              Для стабильной работы сервиса онлайн бронирования отключите VPN.
+            </div>
+            <button
+              type="button"
+              onClick={() => setVpnToastVisible(false)}
+              className="shrink-0 rounded-full border border-[var(--color-accent)]/40 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent-soft)] transition lg:hover:border-[var(--color-accent)]/70 lg:hover:text-white"
+            >
+              Ок
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }
